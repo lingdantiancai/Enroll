@@ -1,6 +1,10 @@
 # -*- coding: cp936 -*-
 import wx
+import sqlite3
 
+#-----------------------------------------
+
+#-----------------------------------------
 class InsertFrame(wx.Frame):
 
     def __init__(self, parent, id):
@@ -76,18 +80,26 @@ class InsertFrame(wx.Frame):
 
         static6 = wx.StaticText(panel, wx.NewId(), "Card ID： ",#这里读取卡的序列号
                 pos=(220, 160))
+        text7 = wx.TextCtrl(panel, wx.NewId(), "", size=(100, -1),
+                pos=(220, 120))
         
         response1 = text1.GetValue()#活动名称
         response2 = text2.GetValue()#活动时间
         response3 = text3.GetValue()#姓名
         response4 = text4.GetValue()#学号
         response5 = text5.GetValue()#部门
+        def OnPrev(self, event):
+            
+            text7.AppendText("Red text")
+
        # self.Bind(wx.EVT_BUTTON, self.OnCloseMe, button)
        # self.Bind(wx.EVT_CLOSE, self.OnCloseWindow)
 
     def OnCloseMe(self, event):
         self.Close(True)
-    def OnPrev(self, event): pass
+    def OnPrev(self, event):
+         text7.AppendText("Red text")
+
     def OnNext(self, event): pass
     def OnLast(self, event): pass
     def OnFirst(self, event): pass
